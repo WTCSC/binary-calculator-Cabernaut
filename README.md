@@ -1,23 +1,17 @@
-# Binary Calculator
+The Function:
 
-<!--
+The function of this is a binary calculator.
+A binary calculator is a type of calculator which takes two sets of binary string, and allows you to add, subract, multiply, them together.
+The calculator also checks for errors and impossible math problems to avoid issues using it.
 
-The following requirements must be met to receive full credit on this assignment. The calculator must handle binary arithmetic operations accurately while following proper error handling procedures and output formatting guidelines.
+How it works:
 
-- Your solution must have a well-written and thorough README file.
-- The solution must be implemented as a function called `binary_calculator()` with three parameters:
-    - `bin1` - A string parameter representing the first binary number to be used in the calculation. Must contain only 0s and 1s.
-    - `bin2` - A string parameter representing the second binary number to be used in the calculation. Must contain only 0s and 1s.
-    - `operator` - A string containing one of the following arithmetic operators: `'+'`, `'-'`, `'*'`, or `'/'`
-- Do not use Python's built-in `bin()` function.
-- Implement your own binary-to-decimal and decimal-to-binary conversion logic.
-- All binary inputs and outputs should be strings.
-- Handle division by zero by returning `"NaN"`
-- Handle decimal numbers by rounding down to the nearest whole number (flooring).
-- Return `"Error"` for invalid binary inputs (containing characters other than `0` and `1`)
-- Return `"Overflow"` for any operations that overflow (i.e. negative numbers, numbers greater than 8-bits).
-- Outputs must be returned as 8-bit numbers (padded with leading zeros if necessary). For example, the decimal number `5` should be returned as `"00000101"` .
-
-Your solution will be tested against various test cases including edge cases, invalid inputs, and all four arithmetic operations.
-
- -->
+In the programming the first step it does is checking if any of the inputs contain any numbers besides 0's and 1's, if it does, it flaggs it as an error.
+The next step it does is checking that the inputs are the valid length for binary, 8 characters long.
+After those are confirmed, it takes the first input and converts it into its decimal value.
+Then, it takes the second input and converts that into its decimal value.
+After those are converted, it checks the type of operator being used, and using it, it determines if the decimal values of both inputs should be added, subtracted, multiplied, or divided.
+If the operator is division, it does an extra check to make sure that the second input is not 0, to prevent the calculator from dividing by 0.
+After that it takes the sum and checks if it is over 255 or under 0.
+If the sum is larger than 255 or under 0, it detects it and flags it as a stack overflow.
+Finally, the calculator goes through the sum and converts it back from decimal to its binary value, leaving you with the answer.
